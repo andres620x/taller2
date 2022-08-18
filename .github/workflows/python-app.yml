@@ -36,5 +36,7 @@ jobs:
       
     - name: set remote
       run: git remote set-url origin https://heroku:${{ secrets.HEROKU_API_KEY }}@git.heroku.com/servicestaller.git
+    - name: set remote
+      run: git config --local --add receive.shallowUpdate true  
     - name: push and deploy
       run: git push origin HEAD:master -f    
