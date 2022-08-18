@@ -33,7 +33,11 @@ jobs:
     - name: Test with pytest
       run: |
         pytest
-      
+
+    - uses: actions/checkout@master
+      with:
+        fetch-depth: 0
+
     - name: set remote
       run: git remote set-url origin https://heroku:${{ secrets.HEROKU_API_KEY }}@git.heroku.com/servicestaller.git
     - name: set sw
