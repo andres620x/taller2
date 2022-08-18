@@ -102,3 +102,7 @@ Desktop.ini
 # Thumbnails
 ._*
 Thumbs.db
+__pycache__
+.pytest_cache
+*__pycache__
+__pycache__*
