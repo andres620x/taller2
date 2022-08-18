@@ -28,7 +28,7 @@ def read_root():
 
 @app.get("/")
 def read_root():
-    return {"Hello": "World"}
+    return {"Hola": "Mundo"}
 
 
 @app.get("/items/{item_id}")
