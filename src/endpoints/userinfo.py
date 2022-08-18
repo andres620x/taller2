@@ -41,8 +41,8 @@ async def add_user(user: UserInfoModel):
 @router.put("/update/{idUsuario}")
 async def read_user(user: UserInfoModel,idUsuario: str):
     url = 'https://62fd8a326e617f88deab3075.mockapi.io/infoUsers/infoUsers/'+idUsuario
-    params = {'UserInfoModel':user}
-    response = requests.put(url, params = params, timeout=5)
+    data=json.loads(user.json())
+    response = requests.put(url, data = data, timeout=5)
     if(response.status_code==  404):
      raise HTTPException(status_code=204, detail="Item not found")
     jsonresponse = json.loads(response.text)
