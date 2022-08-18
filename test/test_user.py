@@ -8,7 +8,7 @@ client = TestClient(app)
 
 def test_index_route():
     response = client.get('/users/')
-    assert response.status_code == 204
+    assert response.status_code == 200
 
 
 def test_index_route():
