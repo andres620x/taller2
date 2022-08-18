@@ -41,6 +41,6 @@ jobs:
       with:
         args: container:login
     - name: set remote
-      run: git remote set-url origin https://heroku:${{ secrets.HEROKU_API_KEY }}@git.heroku.com/{{your app name }}.git
+      run: git remote set-url origin https://heroku:${{ secrets.HEROKU_API_KEY }}@git.heroku.com/servicestaller.git
     - name: push and deploy
       run: git push origin HEAD:master -f    
