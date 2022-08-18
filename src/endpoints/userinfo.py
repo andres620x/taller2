@@ -1,6 +1,6 @@
 from fastapi import APIRouter
 from fastapi import Query
-from fastapi import FastAPI, Response, status
+from fastapi import FastAPI, Response, status,HTTPException
 from src.models.userinfo import UserInfoModel
 from typing import Optional
 import requests
@@ -49,6 +49,8 @@ async def read_user(user: UserInfoModel):
 async def read_user(idUsuario: str):
     url = 'https://62fd8a326e617f88deab3075.mockapi.io/infoUsers/infoUsers/'+idUsuario
     response = requests.delete(url)
-    response.status_code = status.HTTP_204_NO_CONTENT
+    if(response.status_code==  404):
+     raise HTTPException(status_code=204, detail="Item not found")
+
     jsonresponse = json.loads(response.text)
     return jsonresponse
