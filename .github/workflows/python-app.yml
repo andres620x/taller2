@@ -40,7 +40,7 @@ jobs:
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     - name: Test with pytest and coverage
       run: |
-        pytest --cov --cov-report=xml --cov-branch
+        pytest -v -o junit_family=xunit1 --cov=. --cov-report xml:tests/coverage.xml --junitxml=tests/nosetests.xml
    
     - uses: actions/checkout@v2
       with:
