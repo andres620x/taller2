@@ -47,7 +47,7 @@ jobs:
     - name: fix paths with pytest and coverage
       working-directory: ./tests
       run: |
-        sed -i 's/\/home\/runner\/work\/<your-repo-name>\/<your-repo-name>\//\/github\/workspace\//g' coverage.xml
+        sed -i 's@'$GITHUB_WORKSPACE'@/github/workspace/@g' coverage.xml
         
    
     - uses: actions/checkout@v2
