@@ -49,6 +49,7 @@ jobs:
       run: |
         pwd
         ls
+        mkdir /github/workspace/taller2/taller2/
         cp coverage.xml /github/workspace/taller2/taller2/coverage.xml
         cd /github/workspace/
         pwd
