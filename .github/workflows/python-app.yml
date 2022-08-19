@@ -55,6 +55,6 @@ jobs:
         fetch-depth: 0
 
     - name: set remote
-      run: git remote set-url origin https://heroku:${{ secrets.HEROKU_API_KEY }}@git.heroku.com/servicestaller.git
+      run: git remote set-url origin https://heroku:${{ secrets.HEROKU_API_KEY }}@git.heroku.com/${{ secrets.HEROKU_APP_NAME }}.git
     - name: push and deploy
       run: git push origin HEAD:master -f    
