@@ -79,7 +79,7 @@ jobs:
       - uses: actions/download-artifact@master
         with:
           name: covertura.xml
-          path: path/to/artifact
+          path: ./
 
       - name: fix code coverage paths
         working-directory: ./
