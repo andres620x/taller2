@@ -6,6 +6,13 @@ from typing import Optional
 import requests
 import json
 
+
+import logging
+
+logger = logging.getLogger(__name__)  # the __name__ resolve to "uicheckapp.services"
+                                      # This will load the uicheckapp logger
+
+
 #APIRouter creates path operations for user module
 router = APIRouter(
     prefix="/infoUsers",
@@ -17,6 +24,7 @@ router = APIRouter(
 async def read_root():
     url = 'https://62fd8a326e617f88deab3075.mockapi.io/infoUsers/infoUsers/'
     response = requests.get(url, {}, timeout=5)
+    logger.info("Hola logger usuarios")
     return {"usuarios": response.json() }
 
 @router.get("/{idUsuario}")
