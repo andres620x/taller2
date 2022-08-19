@@ -49,6 +49,10 @@ jobs:
       run: |
         pwd
         ls
+        cp coverage.xml /github/workspace/coverage.xml
+        cd /github/workspace/
+        pwd
+        ls
 
 
     - uses: actions/checkout@v2
