@@ -40,14 +40,7 @@ jobs:
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     - name: Test with pytest and coverage
       run: |
-        pytest -v -o junit_family=xunit1 --cov=. --cov-report xml:tests/coverage.xml --junitxml=tests/nosetests.xml
-        
-   
-   
-    - name: fix paths with pytest and coverage
-      working-directory: ./tests
-      run: |
-        sed -i 's/\/home\/runner\/work\/taller2\/taller2\//\/tests\//g' coverage.xml
+        pytest --cov=./ --cov-report=xml
         
    
     - uses: actions/checkout@v2
