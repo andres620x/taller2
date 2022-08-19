@@ -49,7 +49,7 @@ jobs:
       run: |
         pwd
         ls
-        cp coverage.xml /github/workspace/coverage.xml
+        cp coverage.xml /github/workspace/taller2/taller2/coverage.xml
         cd /github/workspace/
         pwd
         ls
