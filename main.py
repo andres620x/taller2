@@ -4,8 +4,23 @@ from fastapi import FastAPI
 from routes.api import router as api_router
 import requests
 from typing import Union
+from aioprometheus import Counter, MetricsMiddleware
+from aioprometheus.asgi.starlette import metrics
+
+
+
 
 app = FastAPI()
+
+
+# Any custom application metrics are automatically included in the exposed
+# metrics. It is a good idea to attach the metrics to 'app.state' so they
+# can easily be accessed in the route handler - as metrics are often
+# created in a different module than where they are used.
+app.state.users_events_counter = Counter("events", "Number of events.")
+
+app.add_middleware(MetricsMiddleware)
+app.add_route("/metrics", metrics)
 
 origins = ["http://localhost:8005"]
 
