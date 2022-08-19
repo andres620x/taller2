@@ -23,6 +23,9 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
+    
+    - run: mkdir -p path/to/artifact
+    
     - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v4
       with:
@@ -44,7 +47,7 @@ jobs:
         pytest -v  --cov --cov-report=xml --cov-report=html
         pwd
         ls
-
+        cp covertura.xml  path/to/artifact/covertura.xml
 
     - name: fix code coverage paths
       working-directory: ./
@@ -52,11 +55,7 @@ jobs:
         pwd
         ls -la
 
-    - uses: actions/checkout@v1
 
-    - run: mkdir -p path/to/artifact
-
-    - run: cp /home/runner/work/taller2/taller2/covertura.xml  path/to/artifact/covertura.xml
 
     - uses: actions/upload-artifact@master
       with:
