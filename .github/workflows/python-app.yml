@@ -56,11 +56,11 @@ jobs:
 
     - run: mkdir -p path/to/artifact
 
-    - run: echo hello > path/to/artifact/world.txt
+    - run: cp covertura.xml > path/to/artifact/covertura.xml
 
     - uses: actions/upload-artifact@master
       with:
-       name: covertura
+       name: covertura.xml
        path: path/to/artifact
 
 
@@ -79,7 +79,7 @@ jobs:
 
       - uses: actions/download-artifact@master
         with:
-          name: covertura
+          name: covertura.xml
           path: path/to/artifact
 
       - name: fix code coverage paths
