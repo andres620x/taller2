@@ -47,7 +47,7 @@ jobs:
         pytest -v  --cov --cov-report=xml --cov-report=html
         pwd
         ls
-        cp covertura.xml  path/to/artifact/covertura.xml
+        cp coverage.xml  path/to/artifact/coverage.xml
 
     - name: fix code coverage paths
       working-directory: ./
