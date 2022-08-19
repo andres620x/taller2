@@ -4,6 +4,7 @@ source .venv/bin/activate  //activate virtual env
 
 pip install fastapi
 
+
 pip install "uvicorn[standard]"
 
 
