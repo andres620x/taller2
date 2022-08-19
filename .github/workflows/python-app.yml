@@ -53,22 +53,28 @@ jobs:
         ls -la
 
 
-    - uses: actions/checkout@v2
-      with:
-        fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
-    - name: SonarCloud Scan
-      uses: SonarSource/sonarcloud-github-action@master
-      with:
-       projectBaseDir: ./
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
-        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+  sonarcloud:
+    name: SonarCloud
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
+      - name: SonarCloud Scan
+        uses: SonarSource/sonarcloud-github-action@master
+        with:
+         projectBaseDir: ./
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+
 
 
   deploy:
 
     runs-on: ubuntu-latest
-    needs: build
+    needs: sonarcloud
     steps:
 
     - uses: actions/checkout@master
