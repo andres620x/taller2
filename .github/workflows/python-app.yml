@@ -45,15 +45,11 @@ jobs:
         ls
 
 
-    - name: List
+    - name: fix code coverage paths
+      working-directory: ./test
       run: |
         pwd
-        ls
-        mkdir /github/workspace/taller2/taller2/
-        cp coverage.xml /github/workspace/taller2/taller2/coverage.xml
-        cd /github/workspace/
-        pwd
-        ls
+        ls -la
 
 
     - uses: actions/checkout@v2
@@ -62,7 +58,7 @@ jobs:
     - name: SonarCloud Scan
       uses: SonarSource/sonarcloud-github-action@master
       with:
-       projectBaseDir: .
+       projectBaseDir: ./test
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
