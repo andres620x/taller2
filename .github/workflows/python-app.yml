@@ -52,6 +52,17 @@ jobs:
         pwd
         ls -la
 
+    - uses: actions/checkout@v1
+
+    - run: mkdir -p path/to/artifact
+
+    - run: echo hello > path/to/artifact/world.txt
+
+    - uses: actions/upload-artifact@master
+      with:
+       name: covertura
+       path: path/to/artifact
+
 
   sonarcloud:
     name: SonarCloud
@@ -62,10 +73,18 @@ jobs:
         with:
           fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
 
+
+
+      - uses: actions/checkout@master
+
+      - uses: actions/download-artifact@master
+        with:
+          name: covertura
+          path: path/to/artifact
+
       - name: fix code coverage paths
         working-directory: ./
         run: |
-          pytest -v  --cov --cov-report=xml --cov-report=html
           pwd
           ls -la
 
