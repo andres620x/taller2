@@ -12,3 +12,4 @@ pip3 freeze > requirements.txt // transportar dependiencias
 touch main.py //crear archivo vacio main.py
   
 Charm .   //abrir PyCharm el contenido del directorio actual
+
