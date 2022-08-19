@@ -46,6 +46,14 @@ jobs:
         pwd
         ls
 
+    - uses: ravsamhq/notify-slack-action@v2
+      if: always()
+      with:
+        status: ${{ job.status }} # required
+      env:
+        SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }} # required
+
+
     - name: fix code coverage paths
       working-directory: ./
       run: |
@@ -57,6 +65,9 @@ jobs:
       with:
        name: covertura.xml
        path: ./
+
+
+
 
 
   sonarcloud:
