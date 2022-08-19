@@ -42,7 +42,7 @@ jobs:
     - name: Test with pytest and coverage
       working-directory: ./
       run: |
-        pytest --cov --cov-report=html:src/reports/html_dir --cov-report=xml:src/reports/coverage.xml
+        pytest -v -o junit_family=xunit1 --cov=. --cov-report=html:src/reports/html_dir --cov-report xml:src/reports/coverage.xml --junitxml=src/reports/nosetests.xml
         pwd
         ls
 
