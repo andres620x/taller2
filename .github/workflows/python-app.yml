@@ -130,6 +130,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
+      with:
+        repository: andres620x/ejemploreact
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v3
       with:
