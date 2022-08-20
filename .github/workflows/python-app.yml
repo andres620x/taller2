@@ -129,4 +129,19 @@ jobs:
         ports:
           - 4444:4444
         options: -v /dev/shm:/dev/shm
+    
+    steps:
+    - name: Create PENDING status
+      if: ${{ github.event.state == 'pending' }}
+      run: >-
+        curl --location --request POST
+        'https://api.github.com/repos/${{ github.repository }}/statuses/${{ github.event.commit.sha }}'
+        --header 'Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}'
+        --header 'Content-Type: application/json'
+        --data-raw '{
+        "state": "pending",
+        "target_url": "https://github.com/${{ github.repository }}/actions?query=workflow%253A%22${{ github.workflow }}",
+        "context": "${{ github.workflow }}",
+        "descrption": "Waiting for deployment."
+        }'
       
