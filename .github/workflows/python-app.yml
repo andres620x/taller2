@@ -144,4 +144,31 @@ jobs:
         "context": "${{ github.workflow }}",
         "descrption": "Waiting for deployment."
         }'
-      
+        
+        
+    - name: Get PR number
+      uses: octokit/graphql-action@v2.0.0
+      if: ${{ github.event.state == 'success' }}
+      id: get_pr_number
+      with:
+        query: |
+          query getPRMergeSha($sha: String, $repo: String!, $owner: String!) {
+            repository(name: $repo, owner: $owner) {
+              commit: object(expression: $sha) {
+                ... on Commit {
+                  associatedPullRequests(first:1) {
+                    edges {
+                      node {
+                        number
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        owner: ${{ github.event.repository.owner.login }}
+        repo: ${{ github.event.repository.name }}
+        sha: ${{ github.event.commit.sha }}
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}        
