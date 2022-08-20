@@ -132,11 +132,10 @@ jobs:
     
     - name: Create package
       run: |
-       echo 'package.json' > .smoke
+       echo '' > package.json
         pwd
         ls -la
     
-    - run: echo 'package.json' > .smoke
     
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v3
