@@ -145,8 +145,7 @@ jobs:
         cache: 'npm' 
     - run: npm install -g shisha
     
-    - run: echo 'https://servicestaller.herokuapp.com/ 200' > .smoke
-    - run: echo 'https://servicestaller.herokuapp.com/infoUsers/ 200' >> .smoke
+    - uses: actions/checkout@v3
 
     - name: Smoke Test
       run: |
