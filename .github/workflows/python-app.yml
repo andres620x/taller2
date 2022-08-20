@@ -135,6 +135,12 @@ jobs:
     - uses: actions/checkout@master
       with:
         repository: namshi/shisha
+        
+    - name: fix code coverage paths
+      working-directory: ./
+      run: |
+        pwd
+        ls -la        
        
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v3
