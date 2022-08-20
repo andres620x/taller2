@@ -148,6 +148,7 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'    
+        cache-dependency-path: './taller2/package-lock.json'
     - run: npm install -g shisha
 
     - name: Smoke Test
