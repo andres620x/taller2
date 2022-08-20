@@ -129,6 +129,13 @@ jobs:
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
+    
+    - name: Create package
+      run: |
+       echo 'package.json' > .smoke
+        pwd
+        ls -la
+    
     - run: echo 'package.json' > .smoke
     
     - name: Use Node.js ${{ matrix.node-version }}
