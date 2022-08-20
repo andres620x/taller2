@@ -134,10 +134,11 @@ jobs:
 
     - uses: actions/checkout@master
       with:
+        working-directory: /home/runner/work/taller2/taller2
         repository: namshi/shisha
         
     - name: fix code coverage paths
-      working-directory: ./
+      working-directory:  /home/runner/work/taller2/taller2
       run: |
         pwd
         ls -la        
