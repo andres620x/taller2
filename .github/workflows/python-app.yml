@@ -132,7 +132,8 @@ jobs:
     
     - name: Create package
       run: |
-       echo '' > package.json
+        echo '' > package.json
+        echo '' > package-lock.json
         pwd
         ls -la
     
