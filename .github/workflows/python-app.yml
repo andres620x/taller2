@@ -131,14 +131,14 @@ jobs:
     steps:
     - run: echo 'https://servicestaller.herokuapp.com/ 200' > .smoke
     - run: echo 'https://servicestaller.herokuapp.com/infoUsers/ 400' >> .smoke
+
     
-    
-    - uses: actions/checkout@v3
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
+        
     - run: npm install -g shisha
 
     - name: Smoke Test
