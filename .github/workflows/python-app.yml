@@ -116,4 +116,17 @@ jobs:
     - name: set remote
       run: git remote set-url origin https://heroku:${{ secrets.HEROKU_API_KEY }}@git.heroku.com/${{ secrets.HEROKU_APP_NAME }}.git
     - name: push and deploy
-      run: git push origin HEAD:master -f    
+      run: git push origin HEAD:master -f   
+      
+
+  smoketest:
+
+    runs-on: ubuntu-latest
+    
+    services:
+      selenium:
+        image: selenium/standalone-chrome
+        ports:
+          - 4444:4444
+        options: -v /dev/shm:/dev/shm
+      
