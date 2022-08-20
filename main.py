@@ -51,7 +51,7 @@ def read_root():
 @app.get("/")
 def read_root():
     logger.info("Hola logger")
-    return {"Hola": "Mundo!!!"}
+    return {"Hello": "World!!!"}
 
 
 @app.get("/items/{item_id}")
