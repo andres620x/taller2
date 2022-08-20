@@ -132,7 +132,10 @@ jobs:
     - run: echo 'https://servicestaller.herokuapp.com/ 200' > .smoke
     - run: echo 'https://servicestaller.herokuapp.com/infoUsers/ 400' >> .smoke
 
-    - uses: actions/shisha@master   
+    - uses: actions/checkout@master
+      with:
+        repository: namshi/shisha
+       
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v3
       with:
