@@ -59,24 +59,25 @@ pip install -r requirements.txt
 ```
 code blocks for commands
 ```
-
-Para ejecutar el programa por cmd con el .venv activo escribimso el comando:
-
+* Como ejecutar localmente
+* Para ejecutar el programa por cmd con el .venv activo escribimso el comando:
 
 ```
 uvicorn main:app --reload
 ```
 
 
-Para ejecutar las pruebas unitarias con covertura:
-
+*Para ejecutar las pruebas unitarias con covertura:
+```
 pytest 
+```
 
-Para ejecutar las pruebas unitarias con covertura:
+*Para ejecutar las pruebas unitarias con covertura:
+```
 
 pytest -v -o junit_family=xunit1 --cov=. --cov-report=html:src/reports/html_dir --cov-report xml:src/reports/coverage.xml --junitxml=src/reports/nosetests.xml
 
-
+```
 ## Help
 
 Any advise for common problems or issues.
