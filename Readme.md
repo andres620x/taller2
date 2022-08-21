@@ -54,12 +54,8 @@ pip install -r requirements.txt
 
 ### Executing program
 
-* How to run the program
-* Step-by-step bullets
-```
-code blocks for commands
-```
-* Como ejecutar localmente
+Como ejecutar localmente
+
 * Para ejecutar el programa por cmd con el .venv activo escribimso el comando:
 
 ```
@@ -74,9 +70,7 @@ pytest
 
 *Para ejecutar las pruebas unitarias con covertura:
 ```
-
 pytest -v -o junit_family=xunit1 --cov=. --cov-report=html:src/reports/html_dir --cov-report xml:src/reports/coverage.xml --junitxml=src/reports/nosetests.xml
-
 ```
 ## Help
 
@@ -87,19 +81,20 @@ command to run if program contains helper info
 En caso de tener alguno problema reportarlo a los siguientes mails:
 
 -jorge-620@hotmail.com
+
 -brafa02@gmail.com
+
 -sebastian17mm@gmail.com
+
 
 ## Authors
 
-Contributors names and contact info
 
-ex. Dominique Pizzie  
-ex. [@DomPizzie](https://twitter.com/dompizzie)
+ex.Jorge Andrés Garcia Zapata (jorge-620@hotmail.com)
 
--Jorge Andrés Garcia Zapata-jorge-620@hotmail.com
--Brayan Rafael Florez Florez-brafa02@gmail.com
--Sebastian Montoya Madrid-sebastian17mm@gmail.com
+ex.Brayan Rafael Florez Florez (brafa02@gmail.com)
+
+ex. Sebastian Montoya Madrid (sebastian17mm@gmail.com)
 
 
 
