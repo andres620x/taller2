@@ -13,11 +13,17 @@ Servicio REST API funcional y sus respectivos pipelines CD Y CI con integracion 
 ### Dependencies
 
 python3
+
 fastapi
+
 uvicorn
+
 requests
+
 pytest
+
 pytest-cov
+
 aioprometheus
 
 ### Installing
@@ -65,7 +71,6 @@ pytest
 Para ejecutar las pruebas unitarias con covertura:
 
 pytest -v -o junit_family=xunit1 --cov=. --cov-report=html:src/reports/html_dir --cov-report xml:src/reports/coverage.xml --junitxml=src/reports/nosetests.xml
-
 
 
 ## Help
