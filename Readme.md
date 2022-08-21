@@ -62,7 +62,11 @@ code blocks for commands
 
 Para ejecutar el programa por cmd con el .venv activo escribimso el comando:
 
+
+```
 uvicorn main:app --reload
+```
+
 
 Para ejecutar las pruebas unitarias con covertura:
 
