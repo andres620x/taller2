@@ -30,27 +30,30 @@ aioprometheus
 
 * How/where to download your program
 * Any modifications needed to be made to files/folders
-Para instalar el proyectos desde cmd daremos el comando git clone "repo url".
+Para instalar el proyectos desde cmd daremos el comando :
+```
+git clone "repo url".
+```
 Luego de esto ejecutaremos el comando 
-
+```
 python3 -m venv .venv   //isolate libraries for this application
-
+```
 Luego se debe activa el path 
 
 Para Windows: 
-
+```
 \path\to\env\Scripts\activate  //activate virtual env
 
 C:\Users\computer_username\venv\Scripts\activate.bat //Example
-
+```
 para So tipo Unix:
-
+```
 source .venv/bin/activate  //activate virtual env
-
+```
 Luego de esto ejecutaremos el comando:
-
+```
 pip install -r requirements.txt
-
+```
 
 ### Executing program
 
@@ -61,7 +64,6 @@ Como ejecutar localmente
 ```
 uvicorn main:app --reload
 ```
-
 
 *Para ejecutar las pruebas unitarias con covertura:
 ```
