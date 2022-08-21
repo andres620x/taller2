@@ -74,17 +74,15 @@ pytest -v -o junit_family=xunit1 --cov=. --cov-report=html:src/reports/html_dir 
 ```
 ## Help
 
-Any advise for common problems or issues.
-```
-command to run if program contains helper info
-```
 En caso de tener alguno problema reportarlo a los siguientes mails:
-
+```
 -jorge-620@hotmail.com
 
 -brafa02@gmail.com
 
 -sebastian17mm@gmail.com
+```
+
 
 
 ## Authors
