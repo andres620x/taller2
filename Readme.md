@@ -65,6 +65,12 @@ Como ejecutar localmente
 uvicorn main:app --reload
 ```
 
+Viste http://localhost:8000/ para ver la aplicacion
+
+Viste http://localhost:8000/metrics para ver las metricas
+
+Viste http://localhost:8000/infoUsers para ver la pi funcional
+
 *Para ejecutar las pruebas unitarias con covertura:
 ```
 pytest 
