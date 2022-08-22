@@ -1,0 +1,166 @@
+{
+	"info": {
+		"_postman_id": "a4babdf1-ef9c-4d0f-92e6-ba84307e91ac",
+		"name": "Servicio1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "get all Info Users",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"expirationDate\": \"2022-09-19T22:14:16.328Z\",\r\n    \"role\": \"role 100\",\r\n    \"encryptedToken\": \"100\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://servicestaller.herokuapp.com/infoUsers/",
+					"protocol": "https",
+					"host": [
+						"servicestaller",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"infoUsers",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get Info Users by Id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"expirationDate\": \"2022-09-19T22:14:16.328Z\",\r\n    \"role\": \"role 100\",\r\n    \"encryptedToken\": \"100\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://servicestaller.herokuapp.com/infoUsers/1",
+					"protocol": "https",
+					"host": [
+						"servicestaller",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"infoUsers",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create Info Users",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"idUsuario\": \"idUsuario 200\",\r\n    \"internalId\": \"51\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://servicestaller.herokuapp.com/infoUsers/add",
+					"protocol": "https",
+					"host": [
+						"servicestaller",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"infoUsers",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update Info Users",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"idUsuario\": \"idUsuario 51\",\r\n    \"internalId\": \"51\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://servicestaller.herokuapp.com/infoUsers/update",
+					"protocol": "https",
+					"host": [
+						"servicestaller",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"infoUsers",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete Info Users",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"idUsuario\": \"idUsuario 51\",\r\n    \"internalId\": \"51\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://servicestaller.herokuapp.com/infoUsers/delete/51",
+					"protocol": "https",
+					"host": [
+						"servicestaller",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"infoUsers",
+						"delete",
+						"51"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
