@@ -1,12 +1,24 @@
 {
 	"info": {
-		"_postman_id": "a4babdf1-ef9c-4d0f-92e6-ba84307e91ac",
+		"_postman_id": "6ccd2889-2cdc-46a3-9e15-778ca8b4c646",
 		"name": "Servicio1",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1520964"
 	},
 	"item": [
 		{
 			"name": "get all Info Users",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"postman.setNextRequest(\"get Info Users by Id\")"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -116,7 +128,7 @@
 					}
 				},
 				"url": {
-					"raw": "https://servicestaller.herokuapp.com/infoUsers/update",
+					"raw": "https://servicestaller.herokuapp.com/infoUsers/update/51",
 					"protocol": "https",
 					"host": [
 						"servicestaller",
@@ -125,7 +137,8 @@
 					],
 					"path": [
 						"infoUsers",
-						"update"
+						"update",
+						"51"
 					]
 				}
 			},
