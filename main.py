@@ -50,6 +50,7 @@ def read_root():
 
 @app.get("/")
 def read_root():
+    logger.info("Hola logger usuarios token")
     logger.info("Hola logger info")
     logger.warning("Hola logger Warn")
     logger.error("Hola logger Error")
